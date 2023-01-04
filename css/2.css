@@ -1,0 +1,37 @@
+.allcontent {
+    padding-top: 50px;
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgba(241, 241, 241, 0.673);
+    padding-left: 50px;
+    height: 1250px;
+}
+
+.firstC {
+    line-height: 30px;
+    height: 300px;
+    margin: 70px;
+    border-radius: 20px;
+    width: 1100px;
+    margin-left: -130px;
+    box-shadow: #000000 1px 1px 2px;
+    background-color: #F6F6F6;
+}
+
+.fist1 {
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.fimg {
+    width: 400px;
+    float: left;
+}
+
+.tet {
+    height: 200px;
+    width: 600px;
+    float: left;
+    margin-left: 40px;
+    margin-top: 40px;
+}

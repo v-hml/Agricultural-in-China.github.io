@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/4.css">
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts.js"></script>
+</head>
+
+<body>
+    <div class="headernav">
+        <div class="nav">
+            <div>
+                <ul class="navul">
+                    <li>
+                        <img width="40px" src="img/img4.jpg" alt="">
+                    </li>
+                    <li><a href="index.html"> 首页 </a></li>
+                    <li><a href="第一部分.html"> 机械拥有量 </a></li>
+                    <li><a href="第二部分.html">灌溉/资源量</a></li>
+                    <li><a href="第三部分.html"> 粮食产量</a></li>
+                    <li><a class="active" href="第四部分.html"> 受灾面积 </a></li>
+                </ul>
+            </div>
+
+            <div>
+                <ul class="divul">
+                    <li><input type="text" placeholder="搜索"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="allcontent">
+        <div id="main" style="padding-bottom: 50px; width: 800px;height:400px;border-bottom: 1px solid #000;"></div>
+
+        <br><br>
+        <div id="main2" style="width: 90%;height:400px;">
+            <h2>
+                2021年全国各种自然灾害共造成1.07亿人次受灾
+            </h2>
+
+            <div class="imgs">
+                <img width="350px" height="300px" src="img/zrzh.jpg" alt="">
+                <img width="350px" height="300px" src="img/zrzh2.jpg" alt="">
+            </div>
+
+            <p>
+                中新网1月23日电
+                据应急管理部微信公众号消息，2021年，我国自然灾害形势复杂严峻，极端天气气候事件多发，自然灾害以洪涝、风雹、干旱、台风、地震、地质灾害、低温冷冻和雪灾为主，沙尘暴、森林草原火灾和海洋灾害等也有不同程度发生。全年各种自然灾害共造成1.07亿人次受灾，因灾死亡失踪867人，紧急转移安置573.8万人次；倒塌房屋16.2万间，不同程度损坏198.1万间；农作物受灾面积11739千公顷；直接经济损失3340.2亿元。
+
+            </p>
+
+            <p>
+                一、灾害阶段性区域性特征明显，全年呈现“上轻下重、南轻北重”态势<br>
+                二、极端性强降雨过程频发，华北、西北地区洪涝灾害历史罕见<br>
+                三、龙卷风等强对流天气突发，风雹灾害点多面广<br>
+                四、全国旱情总体偏轻，局地发生阶段性旱情<br>
+                五、台风登陆数量偏少，“烟花”台风对华东地区造成较大影响<br>
+                六、地震活动强度增强，西部地区发生多起强震
+
+            </p>
+        </div>
+
+    </div>
+    <div class="footer">
+        本页面数据来源于《国家统计局在线网站》如有侵权请联系删除 <br>
+        The data on this page is from the Online Website of the National Bureau of Statistics. If there is any
+        infringement, please contact to delete it
+    </div>
+</body>
+<script>
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+        title: {
+            text: '受灾/成灾 面积图'
+        },
+        legend: {
+            data: ['受灾(千公顷)', '成灾(千公顷)']
+        },
+        radar: {
+            // shape: 'circle',
+            indicator: [{
+                    name: '1990',
+                    max: 6500
+                },
+                {
+                    name: '1995',
+                    max: 16000
+                },
+                {
+                    name: '2000',
+                    max: 30000
+                },
+                {
+                    name: '2020',
+                    max: 38000
+                },
+                {
+                    name: '2021',
+                    max: 52000
+                },
+
+            ]
+        },
+
+        series: [{
+            name: '成灾 vs 受灾',
+            type: 'radar',
+            data: [{
+                    value: [0, 38470, 45820, 54690, 19960, 11739],
+                    name: '成灾(千公顷)'
+                },
+                {
+                    value: [0, 17820, 22270, 34370, 7990, 4682],
+                    name: '受灾(千公顷)'
+                }
+            ]
+        }]
+    };
+
+    option && myChart.setOption(option);
+</script>
+
+</html>

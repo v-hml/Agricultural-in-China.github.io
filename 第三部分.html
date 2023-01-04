@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/3.css">
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts.js"></script>
+</head>
+
+<body>
+    <div class="headernav">
+        <div class="nav">
+            <div>
+                <ul class="navul">
+                    <li>
+                        <img width="40px" src="img/img4.jpg" alt="">
+                    </li>
+                    <li><a href="index.html"> 首页 </a></li>
+                    <li><a href="第一部分.html"> 机械拥有量 </a></li>
+                    <li><a href="第二部分.html">灌溉/资源量</a></li>
+                    <li><a class="active" href="第三部分.html"> 粮食产量</a></li>
+                    <li><a href="第四部分.html"> 受灾面积 </a></li>
+                </ul>
+            </div>
+
+            <div>
+                <ul class="divul">
+                    <li><input type="text" placeholder="搜索"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="allcontent">
+        <div id="main" style="width: 800px;height:400px;border-bottom: 1px solid #000;"></div>
+
+        <br><br>
+        <div id="main2" style="width: 90%;height:400px;">
+            <h2 style="padding: 15px;border-bottom: 5px solid #000;width: 30%;">粮食在我国的战略地位究竟有多重要？</h2>
+            <img class="ls" width="100%" style=" margin-top: 50px; " src="img/ls.png" alt="">
+            <div> <br> <br>
+                相信喜欢历史的人会明白这个道理，国家想要强盛，必须粮食充足。打仗粮食供应不足乃兵家大忌。那个朝代的建立不是拥有着大量的粮食，可以供应军队。如今，虽然世界在不断的提倡和平，但是各国之间都是存在着一定的矛盾的，一旦矛盾被放大，就会发生大规模的战争。而粮食就显得十分重要，国外切断粮食供应，国家将无法有效地维护国家安全。所以，粮食对于国防建设有着巨大的作用。
+                <br><br>
+                粮食可以帮助维护国家稳定
+
+                百姓是生活在最底层的，他们对于国家大事不会给予太大的帮助，他们往往还是比较关心粮食。粮食与百姓的生活关系密切，
+                一旦缺乏了粮食，百姓就可能会聚众发对政府的管理，不利于维护国家的稳定。所以，拥有足够的粮食就代表着能够实现一定的国家稳定。
+                <br><br>
+                粮食与国家经济息息相关,在古代，农业一直都是国家的根本大业，任何经济都与粮食脱不开关系。如今，虽然国家大力发展第二、第三产业，但是许多第二产业的根本还是要归根于粮食。粮食是部分企业的原材料，一旦缺乏粮食，企业将无法正常工作。充足的粮食可以保障经济的顺利发展。
+            </div>
+        </div>
+
+
+    </div>
+    <div class="footer">
+        本页面数据来源于《国家统计局在线网站》如有侵权请联系删除 <br>
+        The data on this page is from the Online Website of the National Bureau of Statistics. If there is any
+        infringement, please contact to delete it
+    </div>
+</body>
+
+<script>
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+        angleAxis: {
+            max: 2,
+            startAngle: 30,
+            splitLine: {
+                show: false
+            }
+        },
+        radiusAxis: {
+            type: 'category',
+            data: ['1990', '1995', '2000', '2020', ' 2021'],
+            z: 10
+        },
+        polar: {},
+        series: [{
+                type: 'bar',
+                data: [11232, 12660, 11593, 10121],
+                coordinateSystem: 'polar',
+                name: '谷物',
+                itemStyle: {
+                    borderColor: 'red',
+                    opacity: 0.8,
+                    borderWidth: 1
+                }
+            },
+            {
+                type: 'bar',
+                data: [89310, 85264, 97964, 100177],
+                coordinateSystem: 'polar',
+                name: '豆类',
+                roundCap: true,
+                itemStyle: {
+                    borderColor: 'green',
+                    opacity: 0.8,
+                    borderWidth: 1
+                }
+            }
+        ],
+        legend: {
+            show: true,
+            data: ['谷物', '豆类']
+        }
+    };
+
+    option && myChart.setOption(option);
+</script>
+
+</html>
